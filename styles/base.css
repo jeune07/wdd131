@@ -64,4 +64,51 @@ img { max-width: 100%; height: auto; }
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
 
-/* Small screens: stack naturally via flex-basis settings above */
+/* Make the figure float to the right so text wraps around it */
+.winsley-about-me figure {
+  float: right;
+  /* space between image and text */
+  margin: 0 0 1rem 1rem;
+  /* keep it from getting too wide */
+  max-width: 220px;
+}
+
+/* Image polish */
+.winsley-about-me img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Contain the float so the section’s height doesn’t collapse */
+.winsley-about-me::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Optional: nicer wrap curve (supported in modern browsers) */
+.winsley-about-me figure {
+  shape-outside: inset(0 round 8px);
+}
+
+/* Mobile: stop floating so the image stacks above text */
+@media (max-width: 700px) {
+  .winsley-about-me figure {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+
+/* Visually hidden utility (keep if you use it) */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
