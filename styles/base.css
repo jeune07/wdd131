@@ -90,9 +90,9 @@ img { max-width: 100%; height: auto; }
 }
 
 /* Optional: nicer wrap curve (supported in modern browsers) */
-.winsley-about-me figure {
+/* .winsley-about-me figure {
   shape-outside: inset(0 round 8px);
-}
+} */
 
 /* Mobile: stop floating so the image stacks above text */
 @media (max-width: 700px) {
