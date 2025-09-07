@@ -1,0 +1,67 @@
+/* Base */
+* { box-sizing: border-box; }
+html:focus-within { scroll-behavior: smooth; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; }
+
+/* Skip link */
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+}
+.skip-link:focus {
+  left: 1rem; top: 1rem; z-index: 9999;
+  background: #111; color: #fff; padding: .5rem .75rem; border-radius: .25rem;
+}
+
+/* Header & nav (flex) */
+.site-header { background: #111; color: #fff; }
+.nav-list {
+  display: flex; flex-wrap: wrap; gap: 1.25rem;
+  list-style: none; margin: 0; padding: 1rem 2rem;
+  justify-content: space-between;
+}
+.nav-list a {
+  color: #fff; text-decoration: none; font-weight: 600;
+}
+.nav-list a:focus-visible, .nav-list a:hover { text-decoration: underline; }
+
+/* Main layout (2 cols 60/40 with wrap) */
+main { display: flex; flex-wrap: wrap; gap: 2rem; padding: 2rem; }
+.winsley-about-me { flex: 1 1 60%; min-width: 280px; }
+.winsley-project  { flex: 1 1 35%; min-width: 260px; }
+
+.card {
+  background: #fff; color: #111;
+  border: 1px solid #e5e7eb; border-radius: .75rem;
+  padding: 1.25rem; box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+/* Project list */
+.project-list { margin: 0; padding: 0; list-style: none; }
+.project-list li + li { margin-top: .5rem; }
+.project-list a { color: #0b65c2; }
+.project-list a:focus-visible, .project-list a:hover { text-decoration: underline; }
+
+/* Images */
+figure { margin: 1rem 0 0; }
+img { max-width: 100%; height: auto; }
+
+/* Footer (flex) */
+.winsley-footer {
+  display: flex; justify-content: center; align-items: center;
+  background: #111; color: #fff; padding: 1rem 2rem; font-size: .95rem;
+}
+.winsley-footer p { margin: 0; }
+
+/* Visible focus ring for keyboard users */
+:focus-visible {
+  outline: 3px solid #0b65c2;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Small screens: stack naturally via flex-basis settings above */
