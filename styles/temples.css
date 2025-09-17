@@ -61,7 +61,6 @@
         align-items: flex-end;
         justify-content: space-evenly;
         text-align: center;
-        font-size: rem;
         transition: .3s ease;
         flex-direction: column;
         right: -1000px;
@@ -76,7 +75,6 @@
         display: flex;
         justify-content: flex-start;
         text-align: center;
-        font-size: rem;
         transition: .3s ease;
         flex-direction: column;
         right: 0px;
