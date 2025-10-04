@@ -1,0 +1,207 @@
+:root {
+    --red: #c61f3b;
+    /* Haiti-inspired accent */
+    --blue: #002f6c;
+    /* Haitian flag blue */
+    --green: #0b6b3b;
+    --cream: #f6f1ea;
+    --ink: #16181d;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --shadow: 0 8px 24px rgba(0, 0, 0, .15);
+    --radius: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--ink);
+    background: #fff;
+}
+
+/* Header */
+.site-header {
+    background: var(--blue);
+    color: #fff;
+    border-bottom: 8px solid var(--red);
+}
+
+.site-header .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 2vw + 1.2rem, 3.5rem);
+    letter-spacing: .5px;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.hero picture,
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 0;
+}
+
+/* Cards (mobile-first) */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: saturate(1.2) blur(2px);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: .85rem 1.1rem;
+    width: 92%;
+    margin: 1rem auto;
+    /* full-width feel & centered */
+}
+
+.card .card-title {
+    margin: .25rem 0 .65rem;
+    background: #fff;
+    /* white badge on mobile */
+    color: var(--blue);
+    display: inline-block;
+    padding: .45rem .95rem;
+    border-radius: 10px;
+    font-weight: 800;
+    letter-spacing: .3px;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .4rem .9rem;
+    margin: 0;
+}
+
+.facts div {
+    display: contents;
+}
+
+.facts dt {
+    font-weight: 700;
+    color: #3b3f46;
+}
+
+.facts dd {
+    margin: 0;
+}
+
+.weather .weather-content {
+    display: grid;
+    place-items: center;
+    gap: .55rem;
+}
+
+.weather .weather-icon-mobile {
+    width: 96px;
+    height: 96px;
+}
+
+.weather-list {
+    list-style: none;
+    padding: 0;
+    margin: .25rem 0 0;
+}
+
+.weather-list li {
+    display: flex;
+    justify-content: center;
+    gap: .45rem;
+    padding: .25rem 0;
+    font-size: 1.05rem;
+}
+
+.weather-list li span:first-child {
+    font-weight: 700;
+}
+
+/* Desktop overlay placement (reversed as you asked): Data = top-left, Weather = bottom-right) */
+@media (min-width: 900px) {
+    .card {
+        position: absolute;
+        width: min(420px, 90%);
+        margin: 0;
+    }
+
+    .card .card-title {
+        background: var(--blue);
+        /* solid badge on wide screens */
+        color: #fff;
+    }
+
+    /* Data top-left */
+    .card.data {
+        top: 1.2rem;
+        left: 1.2rem;
+    }
+
+    /* Weather bottom-right */
+    .card.weather {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        min-width: 380px;
+    }
+
+    /* Pseudo-element icon on large screens */
+    .weather .weather-icon-mobile {
+        display: none;
+    }
+
+    #weather-title {
+        position: relative;
+    }
+
+    #weather-title::after {
+        content: " ⛅";
+        font-size: 1.4rem;
+        margin-left: .35rem;
+    }
+}
+
+/* Footer */
+.site-footer {
+    margin-top: 2rem;
+    background: var(--blue);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 8px solid var(--red);
+}
+
+.site-footer .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.site-footer p {
+    margin: .2rem 0;
+    font-size: 1rem;
+}
+
+/* Small affordance */
+.card:focus-within,
+.card:hover {
+    outline: 2px solid rgba(0, 0, 0, .05);
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Haiti — Country Page</title>
+    <meta name="description"
+        content="Facts and weather for Haiti. WDD 131 Week 03 assignment — personalized for Winsley Jeune." />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="stylesheet" href="./styles/place.css" />
+    <script src="./scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="wrap">
+            <h1>Haiti</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-label="Haiti coastal and historic landscapes">
+            <picture>
+                <!-- Large (desktop) — Citadelle Laferrière panorama feel -->
+                <source media="(min-width: 64rem)" type="image/webp"
+                    srcset="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&auto=format&fit=crop&w=1600&h=700&fm=webp" />
+                <!-- Medium -->
+                <source media="(min-width: 40rem)" type="image/webp"
+                    srcset="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&auto=format&fit=crop&w=1200&h=600&fm=webp" />
+                <!-- Mobile -->
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&auto=format&fit=crop&w=900&h=600&fm=webp"
+                    alt="Tropical coastline in the Caribbean with mountains and blue sea" width="1600" height="700"
+                    loading="eager" />
+            </picture>
+
+            <!-- DATA (top-left desktop, full-width mobile) -->
+            <article class="card data" aria-labelledby="data-title">
+                <h2 id="data-title" class="card-title">Data</h2>
+                <dl class="facts">
+                    <div>
+                        <dt>Official Name:</dt>
+                        <dd>Republic of Haiti</dd>
+                    </div>
+                    <div>
+                        <dt>Area:</dt>
+                        <dd>27,750 sq km</dd>
+                    </div>
+                    <div>
+                        <dt>Population:</dt>
+                        <dd>~11.7 million</dd>
+                    </div>
+                    <div>
+                        <dt>Capital:</dt>
+                        <dd>Port-au-Prince</dd>
+                    </div>
+                    <div>
+                        <dt>Languages:</dt>
+                        <dd>Haitian Creole (Kreyòl), French</dd>
+                    </div>
+                    <div>
+                        <dt>Currency:</dt>
+                        <dd>Haitian Gourde (HTG)</dd>
+                    </div>
+                    <div>
+                        <dt>Time Zone:</dt>
+                        <dd>UTC−5</dd>
+                    </div>
+                    <div>
+                        <dt>Calling Code:</dt>
+                        <dd>+509</dd>
+                    </div>
+                    <div>
+                        <dt>Internet TLD:</dt>
+                        <dd>.ht</dd>
+                    </div>
+                </dl>
+            </article>
+
+            <!-- WEATHER (bottom-right desktop, full-width mobile) -->
+            <article class="card weather" aria-labelledby="weather-title">
+                <h2 id="weather-title" class="card-title">Weather</h2>
+                <div class="weather-content">
+                    <!-- Mobile SVG icon (desktop uses ::after ⛅) -->
+                    <img class="weather-icon-mobile" src="./icons/partly-cloudy.svg" alt="Partly cloudy" width="128"
+                        height="128" />
+                    <ul class="weather-list">
+                        <li><span>Temperature:</span> <strong id="temp">29</strong> <span class="unit">°C</span></li>
+                        <li><span>Conditions:</span> <strong>Partly Cloudy</strong></li>
+                        <li><span>Wind:</span> <strong id="wind">12</strong> <span class="unit">km/h</span></li>
+                        <li><span>Wind Chill:</span> <strong id="windchill">—</strong></li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>©<span id="year"></span> <span class="owner">Winsley Jeune</span> ✿ <span class="place">Haiti</span></p>
+            <p>Last Modification: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+</body>
+
+</html>
