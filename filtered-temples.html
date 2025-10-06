@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Temple Picture Album — Filterable & Lazy-Loaded Gallery</title>
+    <meta name="description"
+        content="Browse a filterable gallery of Latter-day Saint temples with locations, dedication dates, and sizes. Images are lazy-loaded for performance." />
+
+    <meta name="author" content="Winsley Jeune" />
+    <!-- Indexing hints -->
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://jeune07.github.io/wdd131/filtered-temples.html" />
+
+    <!-- Theming / UX -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Temple Picture Album" />
+    <meta property="og:description" content="Filter temples by age and size. Fast, accessible, and mobile-friendly." />
+    <meta property="og:url" content="https://jeune07.github.io/wdd131/filtered-temples.html" />
+    <meta property="og:image" content="https://jeune07.github.io/wdd131/og/temples-cover.jpg" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Temple Picture Album" />
+    <meta name="twitter:description" content="Filter temples by age and size. Fast, accessible, and mobile-friendly." />
+    <meta name="twitter:image" content="https://jeune07.github.io/wdd131/og/temples-cover.jpg" />
+
+    <!-- Icons / PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://content.churchofjesuschrist.org" crossorigin />
+    <link rel="dns-prefetch" href="https://content.churchofjesuschrist.org" />
+    <link rel="stylesheet" href="styles/filtered-temples.css" />
+</head>
+
+
+<body>
+    <!-- Skip link for keyboard users -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+        <div class="wrap">
+            <h1>Temple Picture Album</h1>
+
+            <!-- Use list semantics for nav; buttons are operable with keyboard and screen readers -->
+            <nav class="filters" aria-label="Filter temples">
+                <ul class="filter-list" role="list">
+                    <li><button type="button" class="filter is-active" data-filter="all" aria-pressed="true"
+                            aria-controls="cards">Home</button></li>
+                    <li><button type="button" class="filter" data-filter="old" aria-pressed="false"
+                            aria-controls="cards">Old (&lt; 1900)</button></li>
+                    <li><button type="button" class="filter" data-filter="new" aria-pressed="false"
+                            aria-controls="cards">New (&gt; 2000)</button></li>
+                    <li><button type="button" class="filter" data-filter="large" aria-pressed="false"
+                            aria-controls="cards">Large (&gt; 90k ft²)</button></li>
+                    <li><button type="button" class="filter" data-filter="small" aria-pressed="false"
+                            aria-controls="cards">Small (&lt; 10k ft²)</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="wrap" role="main">
+        <!-- Live region announces updates; role=status = polite by default -->
+        <section id="cards" class="cards" aria-live="polite" role="status" aria-busy="false"></section>
+
+        <!-- Templating hint for crawlers and no-JS users -->
+        <noscript>
+            <p>This gallery requires JavaScript to render the temple cards. Please enable JavaScript.</p>
+        </noscript>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; <span id="year"></span> • Temple Album</p>
+            <p>Last modified: <time id="lastModified" aria-live="off"></time></p>
+        </div>
+    </footer>
+
+    <!-- Minimal structured data for the page -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Temple Picture Album",
+    "description": "Filterable, lazy-loaded gallery of Latter-day Saint temples with location, dedication date, and area.",
+    "url": "https://example.com/filtered-temples.html"
+  }
+  </script>
+
+    <script src="scripts/filtered-temples.js" defer></script>
+</body>
+
+</html>
