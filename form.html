@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/form.css">
+    <title>Product Review</title>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Product Review</h1>
+    </header>
+
+    <main class="container">
+        <!-- Form view -->
+        <form id="reviewForm" novalidate>
+            <div class="form-row">
+                <label for="product">Product Name <span aria-hidden="true">*</span></label>
+                <select id="product" name="product" required>
+                    <option value="" disabled selected>Select a Product …</option>
+                </select>
+            </div>
+
+            <fieldset class="form-row">
+                <legend>Overall Rating <span aria-hidden="true">*</span></legend>
+                <div class="rating" role="radiogroup" aria-label="Overall Rating">
+                    <input type="radio" id="rate-1" name="rating" value="1" required />
+                    <label for="rate-1" aria-label="1 star">☆</label>
+
+                    <input type="radio" id="rate-2" name="rating" value="2" />
+                    <label for="rate-2" aria-label="2 stars">☆☆</label>
+
+                    <input type="radio" id="rate-3" name="rating" value="3" />
+                    <label for="rate-3" aria-label="3 stars">☆☆☆</label>
+
+                    <input type="radio" id="rate-4" name="rating" value="4" />
+                    <label for="rate-4" aria-label="4 stars">☆☆☆☆</label>
+
+                    <input type="radio" id="rate-5" name="rating" value="5" />
+                    <label for="rate-5" aria-label="5 stars">☆☆☆☆☆</label>
+                </div>
+                <p class="hint">Pick 1–5 stars.</p>
+            </fieldset>
+
+            <div class="form-row">
+                <label for="installDate">Date of Installation <span aria-hidden="true">*</span></label>
+                <input id="installDate" name="installDate" type="date" required />
+            </div>
+
+            <fieldset class="form-row">
+                <legend>Which features did you find useful? <span class="subtle">(check all that apply)</span></legend>
+                <div class="checkboxes">
+                    <div class="check"><input type="checkbox" id="feat-durability" name="features" value="Durability" />
+                        <label for="feat-durability">Durability</label>
+                    </div>
+                    <div class="check"><input type="checkbox" id="feat-ease" name="features" value="Ease of Use" />
+                        <label for="feat-ease">Ease of Use</label>
+                    </div>
+                    <div class="check"><input type="checkbox" id="feat-performance" name="features"
+                            value="Performance" /> <label for="feat-performance">Performance</label></div>
+                    <div class="check"><input type="checkbox" id="feat-design" name="features" value="Design" /> <label
+                            for="feat-design">Design</label></div>
+                </div>
+            </fieldset>
+
+            <div class="form-row">
+                <label for="reviewText">Written Review <span class="subtle">(optional)</span></label>
+                <textarea id="reviewText" name="reviewText" rows="6" spellcheck="true"></textarea>
+            </div>
+
+            <div class="form-row">
+                <label for="userName">Your Name <span class="subtle">(optional)</span></label>
+                <input id="userName" name="userName" type="text" autocomplete="name" />
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn">Post Review</button>
+            </div>
+        </form>
+
+        <!-- Confirmation view (same-page preview for canvas) -->
+        <section id="confirmation" class="card" hidden>
+            <p>Your review was received. <a href="#" id="backToForm">Post another</a>.</p>
+            <p class="badge">Reviews submitted on this device: <strong id="reviewCount">0</strong></p>
+
+            <h2>Submission Summary</h2>
+            <dl id="summary" class="summary"></dl>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy;
+            <time class="fullYear" datetime="2025-01-01">2025</time>
+            Winsley Jeune • last modified:
+            <time class="lastmod" datetime="1970-01-01T00:00:00Z">1970-01-01</time>
+        </p>
+    </footer>
+    <script src="scripts/form.js"></script>
+</body>
+
+</html>
