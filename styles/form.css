@@ -27,8 +27,7 @@ body {
 
 body {
     margin: 0;
-    font: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
     color: var(--text);
     background: #fff
 }
@@ -95,7 +94,11 @@ textarea {
     transition: box-shadow .15s, border-color .15s
 }
 
-
+input:focus,
+select:focus,
+textarea:focus {
+    box-shadow: inset 0 0 0 2px var(--ring), 0 0 0 2px color-mix(in oklab, var(--ring) 40%, transparent)
+}
 
 .rating {
     display: grid;
@@ -105,7 +108,11 @@ textarea {
     max-width: 520px
 }
 
-
+.rating input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none
+}
 
 .rating label {
     display: grid;
